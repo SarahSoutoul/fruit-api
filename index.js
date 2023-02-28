@@ -1,10 +1,12 @@
 require('dotenv').config();
 
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const fruits = require('./fruits.json');
 const port = process.env.PORT;
 
+app.use(cors());
 app.use(express.json());
 
 // Home route
