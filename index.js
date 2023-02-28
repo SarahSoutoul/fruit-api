@@ -36,7 +36,7 @@ app.get('/fruits/:name', (req, res) => {
 
 app.post("/fruits", (req, res) => {
     // first check if a fruit with the name specified by the user already exists
-    const fruit = fruits.find((fruit) => fruit.name == req.body.name);
+    const fruit = fruits.find((fruit) => fruit.name.toLowerCase() == req.body.name.toLowerCase());
 
     if(fruit != undefined) {
         res.status(409).send(); 
